@@ -1,0 +1,29 @@
+{
+    "name": "Utl",
+    "description": "Unit testing experiment",
+    "version": "0.0.1",
+    "author": "柏大衛",
+    "bugs": "https://github.com/bodawei/utl/issues",
+    "dependencies": {
+      "semver": "^5.6.0"
+    },
+    "devDependencies": {
+    },
+    "engines": {
+      "node": ">=8.0.0"
+    },
+    "files": [
+    ],
+    "homepage": "https://github.com/bodawei/utl",
+    "keywords": [],
+    "license": "None",
+    "main": "lib/index.js",
+    "repository": "bodawei/utl",
+    "scripts": {
+      "build": "rm -rf lib && tsc",
+      "lint": "eslint . --ext .ts --config .eslintrc",
+      "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+      "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+      "pretest": "tsc -p test --noEmit"
+    }
+  }
