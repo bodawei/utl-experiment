@@ -15,6 +15,10 @@ class Utl {
   public get json() {
     return this.trWrapper.toJSON();
   }
+
+  public get tree() {
+    return this.trWrapper.toTree();
+  }
 }
 
 export { Utl }
