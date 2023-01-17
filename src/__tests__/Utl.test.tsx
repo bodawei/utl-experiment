@@ -3,17 +3,24 @@ import React from "react";
 import { HasUseEffect } from "../fixtures/HasUseEffect";
 
 describe("Utl", () => {
-  describe('construction', () => {
+  describe("construction", () => {
     it("invokes useEffect() effects before returning", () => {
-      let result: string = 'bar';
+      let result: string = "bar";
 
-      new Utl(<HasUseEffect value="foo" onEffectCalled={value => result = value}/>);
+      new Utl(
+        (
+          <HasUseEffect
+            value="foo"
+            onEffectCalled={(value) => (result = value)}
+          />
+        )
+      );
 
-      expect(result).toEqual('foo');
+      expect(result).toEqual("foo");
     });
-  })
+  });
 
-  describe('json', () => {
+  describe("json", () => {
     it("returns a JSON structure for a simple element that can be turned into an HTML-like snapshot", () => {
       const u = new Utl(<div>hi</div>);
 
@@ -23,5 +30,5 @@ describe("Utl", () => {
         </div>
       `);
     });
-  })
+  });
 });
